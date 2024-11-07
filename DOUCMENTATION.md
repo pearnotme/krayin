@@ -7,7 +7,7 @@
 
 2. Steps Followed :
 
-Step 1: Connect to the Droplet**  
+**Step 1**: Connect to the Droplet 
 Command:  
 `ssh root@your_droplet_ip`  
 Purpose: This command establishes an SSH connection to the DigitalOcean droplet, allowing direct command-line access to the server.
