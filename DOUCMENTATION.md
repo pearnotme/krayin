@@ -7,12 +7,12 @@
 
 2. Steps Followed :
 
-**Step 1**: Connect to the Droplet 
+**Step 1: Connect to the Droplet** 
 Command:  
 `ssh root@your_droplet_ip`  
 Purpose: This command establishes an SSH connection to the DigitalOcean droplet, allowing direct command-line access to the server.
 
-Step 2: Install Apache Web Server**  
+**Step 2: Install Apache Web Server**  
 Commands:  
 `sudo apt update`  
 `sudo apt install apache2 -y`  
@@ -24,7 +24,7 @@ Purpose:
 - `sudo systemctl start apache2` starts the Apache service.  
 - `sudo systemctl enable apache2` enables Apache to start automatically on system reboot.
 
-Step 3: Install Composer (PHP Dependency Manager)**  
+**Step 3: Install Composer (PHP Dependency Manager)**  
 Commands:  
 `sudo apt install curl -y`  
 `curl -sS https://getcomposer.org/installer | php`  
@@ -34,7 +34,7 @@ Purpose:
 - `curl -sS https://getcomposer.org/installer | php` downloads and installs Composer, a PHP dependency manager.  
 - `sudo mv composer.phar /usr/local/bin/composer` moves the Composer file to a globally accessible directory so it can be run from any terminal.
 
-Step 4: Install MySQL Database Server**  
+**Step 4: Install MySQL Database Server**  
 Commands:  
 `sudo apt install mysql-server -y`  
 `sudo mysql_secure_installation`  
@@ -42,7 +42,7 @@ Purpose:
 - `sudo apt install mysql-server -y` installs the MySQL server on your droplet.  
 - `sudo mysql_secure_installation` runs a script to secure the MySQL installation by setting the root password and removing unnecessary accounts.
 
-Step 5: Set Up MySQL Database and User**  
+**Step 5: Set Up MySQL Database and User**  
 Commands:  
 `mysql -u root -p`  
 In MySQL shell:  
@@ -59,7 +59,7 @@ Purpose:
 - `FLUSH PRIVILEGES;` reloads the privileges to ensure they take effect.  
 - `EXIT;` exits the MySQL shell.
 
-Step 6: Clone Krayin CRM Repository**  
+**Step 6: Clone Krayin CRM Repository**  
 Commands:  
 `cd /var/www/html`  
 `git clone https://github.com/krayin/laravel-crm.git krayin`  
@@ -67,7 +67,7 @@ Purpose:
 - `cd /var/www/html` navigates to the web root directory.  
 - `git clone https://github.com/krayin/laravel-crm.git krayin` clones the Krayin CRM repository from GitHub into the `krayin` directory.
 
-Step 7: Set Up Permissions**  
+**Step 7: Set Up Permissions**  
 Commands:  
 `sudo chown -R www-data:www-data /var/www/html/krayin`  
 `sudo chmod -R 775 /var/www/html/krayin/storage`  
@@ -76,7 +76,7 @@ Purpose:
 - `sudo chown -R www-data:www-data /var/www/html/krayin` ensures Apache has ownership over the Krayin directory.  
 - `sudo chmod -R 775 /var/www/html/krayin/storage` and `sudo chmod -R 775 /var/www/html/krayin/bootstrap/cache` ensure the `storage` and `bootstrap/cache` directories are writable by the web server.
 
-Step 8: Install Project Dependencies**  
+**Step 8: Install Project Dependencies**  
 Commands:  
 `cd /var/www/html/krayin`  
 `composer install`  
@@ -84,7 +84,7 @@ Purpose:
 - `cd /var/www/html/krayin` navigates to the Krayin project directory.  
 - `composer install` installs the required PHP dependencies listed in the `composer.json` file.
 
-Step 9: Set Up the Environment File**  
+**Step 9: Set Up the Environment File**  
 Commands:  
 `cp .env.example .env`  
 `nano .env`  
@@ -102,17 +102,17 @@ DB_USERNAME=krayin_user
 DB_PASSWORD=strong_password
 ```
 
-Step 10: Generate Application Key**  
+**Step 10: Generate Application Key**  
 Command:  
 `php artisan key:generate`  
 Purpose: This command generates a unique application key for the Laravel app, which is essential for securing user sessions and application data.
 
-Step 11: Run Database Migrations**  
+**Step 11: Run Database Migrations**  
 Command:  
 `php artisan migrate`  
 Purpose: This command runs the database migrations to create the necessary tables in the `krayin_db` database.
 
-Step 12: Configure Apache for Krayin**  
+**Step 12: Configure Apache for Krayin**  
 Commands:  
 `sudo nano /etc/apache2/sites-available/krayin.conf`  
 
@@ -142,5 +142,5 @@ Purpose:
 - `sudo a2enmod rewrite` enables the Apache mod_rewrite module, required for URL rewriting.  
 - `sudo systemctl restart apache2` restarts Apache to apply the new configuration.
 
-Final Step: Access Your Application**  
+**Final Step: Access Your Application**  
 Open your browser and navigate to `http://your_droplet_ip` to access your Krayin CRM application.
