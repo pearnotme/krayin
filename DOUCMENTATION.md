@@ -3,9 +3,51 @@
    - Software Used: Krayin (an open-source Laravel-based CRM application).
    - Cloud Provider: Choosen cloud provider is DigitalOcean.
    - Target Audience: People who want to use Krayin CRM remotely.
-   - Done By : Krish and Prarthana  
+   - Done By : Krish and Prarthana
 
-**2. Steps Followed :**
+**2. App Name:Krayin
+     App description:
+     github link:- https://github.com/krayin/laravel-crm
+     hardware requirements:-Droplet with at least 1 vCPU, 1GB RAM, and 25GB SSD storage
+     Local Machine with 4GB RAM and 10GB storage
+     software requirements:-Server Software: Ubuntu 20.04+
+                                             Apache2
+                                             MySQL 8.0+
+                                             PHP 8.0+ with required extensions
+                                             Composer
+                                             Let’s Encrypt SSL (optional for HTTPS)
+                            Development Tools: Git
+                                             SSH Client (OpenSSH, PuTTY)
+                                             Text Editor (VS Code, Nano)
+                           Dependencies (Handled by Composer):
+                                             Laravel Framework
+                                             MPDF
+                                             PHPSpreadsheet
+    flowchart on how the app works:-
+       +----------------------+        +------------------------+        +--------------------+
+   |                      |        |                        |        |                    |
+   |       User           |        |      Apache Web       |        |  Application       |
+   |  (Browser Client)    | <----> |        Server         | <----> |   Backend (PHP)    |
+   |                      |        |    (HTTP/HTTPS)       |        |    Laravel         |
+   +----------------------+        +------------------------+        +--------------------+
+             |                                     |                           |
+             |                                     |                           |
+             v                                     v                           v
+   +----------------------+         +-----------------------+       +-----------------------+
+   |    SSL/HTTPS        |         |    Configuration      |       |    Application        |
+   |   (Secure Access)   |         |      Files (.env)     |       |    Logic/Controllers  |
+   |                     |         |                       |       |    (Krayin CRM)       |
+   +----------------------+         +-----------------------+       +-----------------------+
+             |                                     |                           |
+             |                                     |                           |
+             v                                     v                           v
+   +-----------------------+        +-------------------------+     +-------------------------+
+   |   MySQL Database      | <----> |    Eloquent ORM        |     |       Storage           |
+   | (Data Storage Layer)  |        |   (Laravel DB Layer)   |     |  (File Uploads, Logs)   |
+   +-----------------------+        +-------------------------+     +-------------------------+
+
+
+**3. Steps Followed :**
 
 **Step 1: Connect to the Droplet** 
 Command:  
