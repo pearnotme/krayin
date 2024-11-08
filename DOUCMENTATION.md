@@ -24,27 +24,26 @@
                                              MPDF
                                              PHPSpreadsheet
     flowchart on how the app works:-
-       +----------------------+        +------------------------+        +--------------------+
-   |                      |        |                        |        |                    |
-   |       User           |        |      Apache Web       |        |  Application       |
-   |  (Browser Client)    | <----> |        Server         | <----> |   Backend (PHP)    |
-   |                      |        |    (HTTP/HTTPS)       |        |    Laravel         |
-   +----------------------+        +------------------------+        +--------------------+
-             |                                     |                           |
-             |                                     |                           |
-             v                                     v                           v
-   +----------------------+         +-----------------------+       +-----------------------+
-   |    SSL/HTTPS        |         |    Configuration      |       |    Application        |
-   |   (Secure Access)   |         |      Files (.env)     |       |    Logic/Controllers  |
-   |                     |         |                       |       |    (Krayin CRM)       |
-   +----------------------+         +-----------------------+       +-----------------------+
-             |                                     |                           |
-             |                                     |                           |
-             v                                     v                           v
-   +-----------------------+        +-------------------------+     +-------------------------+
-   |   MySQL Database      | <----> |    Eloquent ORM        |     |       Storage           |
-   | (Data Storage Layer)  |        |   (Laravel DB Layer)   |     |  (File Uploads, Logs)   |
-   +-----------------------+        +-------------------------+     +-------------------------+
+          User (Client)
+             |
+             v
+         SSL/HTTPS Layer (Optional, Secure Connection)
+             |
+             v
+         Apache Web Server
+             |
+             v
+         Krayin Application Backend (PHP - Laravel)
+             |
+             v
+         Application Logic / Controllers
+             |
+             v
+         Eloquent ORM
+             |
+             v
+         MySQL Database***
+         
 
 
 **3. Steps Followed :**
